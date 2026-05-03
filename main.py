@@ -27,6 +27,9 @@ def check_winner(board):
     
     if board[0][0] == board[1][1] == board[2][2] and board[0][0] != " ":
         return board[0][0]
+
+    if board[0][2] == board[1][1] == board[2][0] and board[0][2] != " ":
+        return board[0][2]
     
     return None
 
@@ -127,7 +130,7 @@ def human(board):
 def play_terminal():
     print("You are O, the AI is X")
     result = play_game(minimax_agent,human,verbose=True)
-    print("Result:", result)
+    print("Result:", result," wins")
 
 def simulate_games(n,agentx,agento):
     results = {"X":0,"O":0,"Draw":0}
